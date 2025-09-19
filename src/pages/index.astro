@@ -7,7 +7,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!doctype html>
 <html lang="en">
-  <head>
+ 
+<div class="banner">
+  <img src="/banner1.jpg" alt="Banner" />
+</div>
+
+<head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
@@ -31,3 +36,33 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <Footer />
   </body>
 </html>
+
+<style>
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* adjust to your liking */
+    overflow: hidden;
+  }
+
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Fade overlay */
+  .banner .fade {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px; /* how far the fade reaches down */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--color-bg) 100%);
+  }
+
+  .content {
+    padding: 2rem;
+    text-align: center;
+  }
+</style>
