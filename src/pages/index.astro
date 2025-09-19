@@ -43,7 +43,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   .banner {
     position: relative;
     width: 100%;
-    height: 300px; /* adjust as needed */
+    height: 600px; /* adjust as needed */
     overflow: hidden;
   }
 
@@ -51,7 +51,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center; /* <-- only show the bottom part */
+    object-position: bottom; /* <-- only show the bottom part */
     display: block;
   }
 
@@ -61,7 +61,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     bottom: 0;
     left: 0;
     right: 0;
-    height: 150px; /* how tall the fade is */
+    height: 200px; /* how tall the fade is */
     background: linear-gradient(
       to bottom,
       rgba(15, 18, 25, 0), /* fully transparent at the top */
