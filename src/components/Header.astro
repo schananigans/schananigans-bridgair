@@ -15,12 +15,13 @@ import { SITE_TITLE } from '../consts';
 			<!-- LinkedIn -->
 			<a href="https://www.linkedin.com/in/bridger-schaffer-760334380/" target="_blank" rel="noopener">
 				<span class="sr-only">LinkedIn</span>
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+				<svg ...></svg>
 			</a>
 			<!-- Instagram -->
 			<a href="https://www.instagram.com/bridgerschaffer/" target="_blank" rel="noopener">
 				<span class="sr-only">Instagram</span>
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>			</a>
+				<svg ...></svg>
+			</a>
 		</div>
 	</nav>
 </header>
@@ -29,7 +30,7 @@ import { SITE_TITLE } from '../consts';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: #0d1b2a; /* midnight blue */
+		background: #0d1b2a;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 	}
 
@@ -59,7 +60,7 @@ import { SITE_TITLE } from '../consts';
 	}
 
 	nav a:hover {
-		color: #4da6ff; /* accent blue */
+		color: #4da6ff;
 	}
 
 	nav a.active {
@@ -78,45 +79,6 @@ import { SITE_TITLE } from '../consts';
 		color: #4da6ff;
 	}
 
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
