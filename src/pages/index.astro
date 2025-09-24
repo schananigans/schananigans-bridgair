@@ -4,138 +4,148 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bridger Schaffer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: linear-gradient(135deg, #004aad, #0073e6);
-      color: white;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-    }
-
-    /* Layout for photo + highlights */
-    .main {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 2rem;
-      gap: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    /* Photo styling */
-    .profile-photo {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .profile-photo img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    /* Highlights section */
-    .highlights {
-      flex: 3; /* allows it to take up more space */
-    }
-
-    .highlights h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-      margin-top: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #333;
-      color: white;
-      margin-top: 2rem;
-    }
-  </style>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
 <body>
-  <header>
-    <h1>Bridger Schaffer</h1>
-    <p>Aspiring Commercial Pilot | Outdoor Enthusiast | Builder</p>
-  </header>
+  <Header />     
 
-  <div class="main">
-    <!-- Photo on the left -->
-    <div class="profile-photo">
-      <img src="your-photo.jpg" alt="Bridger Schaffer">
-    </div>
+  <!-- Banner Image -->
+  <div class="banner">
+    <img src="/banner1.jpg" alt="Banner" />
+  </div>
 
-    <!-- Highlights on the right -->
+  <main>
+    <!-- About Section (acts like homepage content) -->
+    <section class="about">
+      <h1>Hi, I’m Bridger 👋</h1>
+      <p>
+        I’m a freshman at <strong>Embry-Riddle Aeronautical University</strong>, pursuing Aeronautical Science.  
+        I hold my <strong>Private Pilot License</strong> and have a passion for both aviation and the outdoors.  
+        Growing up in Oregon, I found joy in skiing, mountain biking, and hiking — experiences that taught me focus, 
+        determination, and adaptability.
+      </p>
+    </section>
+
+    <!-- Quick Highlights -->
     <section class="highlights">
       <h2>Highlights</h2>
       <div class="cards">
         <div class="card">
           <h3>🎓 Education</h3>
-          <p>Embry-Riddle Aeronautical University<br/>Private Pilot License</p>
+          <p>Embry-Riddle Aeronautical University<br/>Aeronautical Science Major</p>
         </div>
         <div class="card">
           <h3>✈️ Aviation</h3>
-          <p>Aspiring commercial pilot<br/>Currently training and building hours</p>
+          <p>Currently have my PPL<br/>Currently training for my Instrument License</p>
         </div>
         <div class="card">
           <h3>🚵 Outdoors</h3>
           <p>Skiing, mountain biking, and hiking across the Pacific Northwest</p>
         </div>
-        <div class="card">
-          <h3>💻 Projects</h3>
-          <p>3D-printed RC airplane, journaling app, personal website</p>
-        </div>
       </div>
     </section>
-  </div>
 
-  <footer>
-    <p>© 2025 Bridger Schaffer</p>
-  </footer>
+    <!-- Featured Projects/Links -->
+    <section class="featured">
+      <h2>Explore More</h2>
+      <ul>
+        <li><a href="/projects">🚀 Projects</a></li>
+        <li><a href="/journal">📓 Journal</a></li>
+        <li><a href="/links">🔗 Links</a></li>
+        <li><a href="/resume">📄 Resume</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <Footer />
 </body>
 </html>
+
+<style>
+  body {
+    background: #0f1219;
+    color: #fff;
+    font-family: system-ui, sans-serif;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(15, 18, 25, 0), #0f1219);
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .about {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .highlights {
+    margin-bottom: 3rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: #1a1d26;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .featured ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .featured a {
+    display: inline-block;
+    background: #1a1d26;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  .featured a:hover {
+    background: #2b2f3a;
+  }
+</style>
