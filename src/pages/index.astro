@@ -159,6 +159,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   gap: 3rem;
   margin: 4rem auto;
   max-width: 1300px; /* allow the highlights to take more horizontal space */
+  width: 90%; /* scale nicely on smaller screens */
+}
+
+.about-highlight .highlights {
+  flex: 1;
 }
 
 .profile-photo {
@@ -186,5 +191,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   gap: 1.5rem;
 }
 
+.about-highlight .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
 
 </style>
