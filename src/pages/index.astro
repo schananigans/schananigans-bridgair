@@ -152,4 +152,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   .featured a:hover {
     background: #2b2f3a;
   }
+
+.about-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin: 3rem auto;
+  max-width: 1100px;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0; /* prevent it from shrinking */
+}
+
+.highlights {
+  flex: 1; /* takes up the remaining space */
+}
+
+.highlights h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #e4e6eb;
+}
 </style>
