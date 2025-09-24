@@ -8,42 +8,78 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="en">
 <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />     
-<div class="banner">
-  <img src="/banner1.jpg" alt="Banner" />
-</div>
-    <main>
-      <section class="hero">
-        <h1>Hi, I’m Bridger 👋</h1>
-        <p>Welcome to my site — a space for my projects, thoughts, and adventures.</p>
-        <a href="/about" class="btn">Learn more</a>
-      </section>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+  <Header />     
 
-      <section class="featured">
-        <h2>Explore</h2>
-        <ul>
-          <li><a href="/projects">🚀 Projects</a></li>
-          <li><a href="/journal">📓 Journal</a></li>
-          <li><a href="/links">🔗 Links</a></li>
-        </ul>
-      </section>
-    </main>
-    <Footer />
-  </body>
+  <!-- Banner Image -->
+  <div class="banner">
+    <img src="/banner1.jpg" alt="Banner" />
+  </div>
+
+  <main>
+    <!-- About Section (acts like homepage content) -->
+    <section class="about">
+      <h1>Hi, I’m Bridger 👋</h1>
+      <p>
+        I’m a freshman at <strong>Embry-Riddle Aeronautical University</strong>, pursuing Aeronautical Science.  
+        I hold my <strong>Private Pilot License</strong> and have a passion for both aviation and the outdoors.  
+        Growing up in Oregon, I found joy in skiing, mountain biking, and hiking — experiences that taught me focus, 
+        determination, and adaptability.
+      </p>
+    </section>
+
+    <!-- Quick Highlights -->
+    <section class="highlights">
+      <h2>Highlights</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>🎓 Education</h3>
+          <p>Embry-Riddle Aeronautical University<br/>Private Pilot License</p>
+        </div>
+        <div class="card">
+          <h3>✈️ Aviation</h3>
+          <p>Aspiring commercial pilot<br/>Currently training and building hours</p>
+        </div>
+        <div class="card">
+          <h3>🚵 Outdoors</h3>
+          <p>Skiing, mountain biking, and hiking across the Pacific Northwest</p>
+        </div>
+        <div class="card">
+          <h3>💻 Projects</h3>
+          <p>3D-printed RC airplane, journaling app, personal website</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects/Links -->
+    <section class="featured">
+      <h2>Explore More</h2>
+      <ul>
+        <li><a href="/projects">🚀 Projects</a></li>
+        <li><a href="/journal">📓 Journal</a></li>
+        <li><a href="/links">🔗 Links</a></li>
+        <li><a href="/resume">📄 Resume</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <Footer />
+</body>
 </html>
 
 <style>
   body {
-    background: #0f1219; /* use the same as your global body background */
+    background: #0f1219;
+    color: #fff;
+    font-family: system-ui, sans-serif;
   }
 
   .banner {
     position: relative;
     width: 100%;
-    height: 600px; /* adjust as needed */
+    height: 400px;
     overflow: hidden;
   }
 
@@ -51,7 +87,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom; /* <-- only show the bottom part */
+    object-position: center;
     display: block;
   }
 
@@ -61,11 +97,59 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px; /* how tall the fade is */
-    background: linear-gradient(
-      to bottom,
-      rgba(15, 18, 25, 0), /* fully transparent at the top */
-      #0f1219 /* your page background color */
-    );
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(15, 18, 25, 0), #0f1219);
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .about {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .highlights {
+    margin-bottom: 3rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: #1a1d26;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .featured ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .featured a {
+    display: inline-block;
+    background: #1a1d26;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  .featured a:hover {
+    background: #2b2f3a;
   }
 </style>
