@@ -7,145 +7,240 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!doctype html>
 <html lang="en">
-<head>
-  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-</head>
-<body>
-  <Header />     
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
 
-  <!-- Banner Image -->
-  <div class="banner">
-    <img src="/banner1.jpg" alt="Banner" />
-  </div>
+    <!-- Banner (under header) -->
+    <div class="banner">
+      <img src="/banner1.jpg" alt="Banner" />
+    </div>
 
-  <main>
-    <!-- About Section (acts like homepage content) -->
-    <section class="about">
-      <h1>Hi, I’m Bridger 👋</h1>
-      <p>
-        I’m a freshman at <strong>Embry-Riddle Aeronautical University</strong>, pursuing Aeronautical Science.  
-        I hold my <strong>Private Pilot License</strong> and have a passion for both aviation and the outdoors.  
-        Growing up in Oregon, I found joy in skiing, mountain biking, and hiking — experiences that taught me focus, 
-        determination, and adaptability.
-      </p>
-    </section>
+    <!-- Page main (we override global main sizing with a class) -->
+    <main class="page-main">
+      <div class="container">
+        <!-- Intro / About snapshot -->
+        <section class="about">
+          <h1>Hi, I’m Bridger 👋</h1>
+          <p>
+            I’m a freshman at <strong>Embry-Riddle Aeronautical University</strong> studying
+            Aeronautical Science. I hold a <strong>Private Pilot License</strong> and enjoy
+            combining technical projects with outdoor adventures like skiing and mountain biking.
+          </p>
+        </section>
 
-    <!-- Quick Highlights -->
-    <section class="highlights">
-      <h2>Highlights</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>🎓 Education</h3>
-          <p>Embry-Riddle Aeronautical University<br/>Aeronautical Science Major</p>
-        </div>
-        <div class="card">
-          <h3>✈️ Aviation</h3>
-          <p>Currently have my PPL<br/>Currently training for my Instrument License</p>
-        </div>
-        <div class="card">
-          <h3>🚵 Outdoors</h3>
-          <p>Skiing, mountain biking, and hiking across the Pacific Northwest</p>
-        </div>
+        <!-- Photo on the left, Highlights on the right -->
+        <section class="about-highlight">
+          <div class="photo-wrap">
+            <img src="/aboutme.jpg" alt="Photo of Bridger" class="profile-photo" />
+          </div>
+
+          <div class="highlights">
+            <h2>Highlights</h2>
+            <div class="cards">
+              <div class="card">
+                <h3>🎓 Education</h3>
+                <p>Embry-Riddle Aeronautical University<br/>Private Pilot License</p>
+              </div>
+              <div class="card">
+                <h3>✈️ Aviation</h3>
+                <p>Aspiring commercial pilot — currently building hours & training</p>
+              </div>
+              <div class="card">
+                <h3>🚵 Outdoors</h3>
+                <p>Skiing, mountain biking, and hiking across the Pacific Northwest</p>
+              </div>
+              <div class="card">
+                <h3>💻 Projects</h3>
+                <p>3D-printed RC airplane, journaling app, personal website</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick links / CTA -->
+        <section class="featured-links">
+          <a href="/projects">🚀 Projects</a>
+          <a href="/journal">📓 Journal</a>
+          <a href="/links">🔗 Links</a>
+          <a href="/resume">📄 Resume</a>
+        </section>
       </div>
-    </section>
+    </main>
 
-    <!-- Featured Projects/Links -->
-    <section class="featured">
-      <h2>Explore More</h2>
-      <ul>
-        <li><a href="/projects">🚀 Projects</a></li>
-        <li><a href="/journal">📓 Journal</a></li>
-        <li><a href="/links">🔗 Links</a></li>
-        <li><a href="/resume">📄 Resume</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <Footer />
-</body>
+    <Footer />
+  </body>
 </html>
 
 <style>
-  body {
-    background: #0f1219;
-    color: #fff;
-    font-family: system-ui, sans-serif;
+  /* Page-level overrides so the global main width (720px) doesn't constrain this page */
+  .page-main {
+    width: 100%;
+    max-width: none; /* overrides site global */
+    padding: 2rem 1rem;
   }
 
+  /* Centered content container with generous max width */
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* Banner */
   .banner {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: clamp(240px, 40vh, 600px); /* responsive height */
     overflow: hidden;
+    background: #0f1219; /* fallback */
   }
-
   .banner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 80%;
+    object-position: center;
     display: block;
   }
-
   .banner::after {
     content: "";
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
-    height: 150px;
-    background: linear-gradient(to bottom, rgba(15, 18, 25, 0), #0f1219);
+    bottom: 0;
+    height: 160px;
+    background: linear-gradient(to bottom, rgba(15,18,25,0), #0f1219);
   }
 
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
+  /* ABOUT */
   .about {
     text-align: center;
-    margin-bottom: 3rem;
+    color: #eef2f8;
+    margin: 2.5rem 0;
+  }
+  .about h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.1rem;
+    color: #ffffff;
+  }
+  .about p {
+    margin: 0 auto;
+    max-width: 820px;
+    color: #c9d1d9;
+    line-height: 1.6;
   }
 
+  /* PHOTO + HIGHLIGHTS layout */
+  .about-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    margin: 3rem 0;
+    width: 100%;
+  }
+
+  /* The photo column */
+  .photo-wrap {
+    flex: 0 0 360px; /* fixed width column for photo */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .profile-photo {
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 32px rgba(0,0,0,0.6);
+  }
+
+  /* The highlights column takes remaining space */
   .highlights {
-    margin-bottom: 3rem;
+    flex: 1 1 auto;
+    color: #eef2f8;
+  }
+  .highlights h2 {
+    margin: 0 0 1rem;
+    font-size: 1.9rem;
   }
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 1.25rem;
   }
 
   .card {
-    background: #1a1d26;
-    padding: 1rem;
+    background: rgba(255,255,255,0.03); /* subtle dark card */
+    padding: 1.25rem;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    color: #dbe6f5;
+  }
+  .card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+  }
+  .card p {
+    margin: 0;
+    color: #bfc9d8;
+    line-height: 1.5;
   }
 
-  .featured ul {
-    list-style: none;
-    padding: 0;
+  /* Quick links under the highlights */
+  .featured-links {
+    margin-top: 2.5rem;
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
   }
-
-  .featured a {
+  .featured-links a {
     display: inline-block;
-    background: #1a1d26;
-    padding: 0.75rem 1.25rem;
-    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    background: rgba(255,255,255,0.03);
+    color: #e6eef9;
     text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: background 0.2s;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 160ms ease, background 160ms ease;
+  }
+  .featured-links a:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.06);
   }
 
-  .featured a:hover {
-    background: #2b2f3a;
+  /* Responsive: stack photo and highlights on narrow screens */
+  @media (max-width: 940px) {
+    .about-highlight {
+      flex-direction: column;
+      align-items: center;
+    }
+    .photo-wrap {
+      flex: 0 0 auto;
+    }
+    .profile-photo {
+      width: 280px;
+      height: 280px;
+    }
+    .cards {
+      grid-template-columns: 1fr;
+    }
+    .container {
+      padding: 0 1rem;
+    }
+  }
+
+  /* Small screens */
+  @media (max-width: 520px) {
+    .profile-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 12px;
+    }
+    .about h1 {
+      font-size: 1.6rem;
+    }
   }
 </style>
