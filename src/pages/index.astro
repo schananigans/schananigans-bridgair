@@ -39,7 +39,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <div class="cards">
       <div class="card">
         <h3>🎓 Education</h3>
-        <p>Embry-Riddle Aeronautical University<br/>Private Pilot License</p>
+        <p>Embry-Riddle Aeronautical University<br/>Aeronautical Science Student</p>
       </div>
       <div class="card">
         <h3>✈️ Aviation</h3>
@@ -156,27 +156,35 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .about-highlight {
   display: flex;
   align-items: flex-start;
-  gap: 2.5rem;
-  margin: 3rem auto;
-  max-width: 1100px;
+  gap: 3rem;
+  margin: 4rem auto;
+  max-width: 1300px; /* allow the highlights to take more horizontal space */
 }
 
 .profile-photo {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
+  width: 350px;   /* bigger photo */
+  height: 350px;
+  border-radius: 16px; /* less circular, more like a card/photo */
   object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  flex-shrink: 0; /* prevent it from shrinking */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  flex-shrink: 0; /* stops shrinking */
 }
 
 .highlights {
-  flex: 1; /* takes up the remaining space */
+  flex: 1; /* takes the rest of the row */
 }
 
 .highlights h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
   color: #e4e6eb;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+
 </style>
