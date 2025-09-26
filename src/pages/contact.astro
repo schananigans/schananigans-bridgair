@@ -1,0 +1,85 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Contact | {SITE_TITLE}" description="Get in touch with me" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="contact">
+        <h1>📬 Contact Me</h1>
+        <p>If you’d like to get in touch, feel free to reach out directly using the links below:</p>
+
+        <div class="contact-card">
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:schaffb2@my.erau.edu">schaffb2@my.erau.edu</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+15044840116">(504) 484-0116</a></li>
+            <li><strong>Website:</strong> <a href="https://bridgair.com" target="_blank">bridgair.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-link" target="_blank">linkedin.com/in/your-link</a></li>
+            <li><strong>Resume:</strong> <a href="/resume.pdf" target="_blank">Download Resume</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    background: #0f1219;
+  }
+
+  .contact {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e6eef9;
+  }
+
+  .contact p {
+    color: #9aa7b8;
+    margin-bottom: 2rem;
+  }
+
+  .contact-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+  }
+
+  .contact-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .contact-card li {
+    margin: 1rem 0;
+    color: #e6eef9;
+  }
+
+  .contact-card a {
+    color: #9cc4ff;
+    text-decoration: none;
+  }
+
+  .contact-card a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+  }
+</style>
