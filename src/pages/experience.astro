@@ -1,0 +1,131 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Experience | Bridger Schaffer" description="Overview of my education, work, and accomplishments." />
+  </head>
+  <body>
+    <Header />
+
+    <main class="experience-page">
+      <section class="intro">
+        <h1>Experience</h1>
+        <p>
+          Here’s an overview of my journey so far — spanning my education, work, and personal highlights.
+          Each area has helped me grow both professionally and personally.
+        </p>
+      </section>
+
+      <section class="experience-section" id="education">
+        <h2>🎓 Education</h2>
+        <div class="card">
+          <h3>Embry-Riddle Aeronautical University</h3>
+          <p>B.S. in Aeronautical Science (In Progress)</p>
+          <p>Currently pursuing flight training and academic studies in aviation.</p>
+        </div>
+        <div class="card">
+          <h3>Private Pilot License</h3>
+          <p>Earned during high school; continuing to build hours toward advanced ratings.</p>
+        </div>
+        <!-- You can add awards/scholarships here -->
+      </section>
+
+      <section class="experience-section" id="work">
+        <h2>💼 Work</h2>
+        <div class="card">
+          <h3>REI (Retail Associate)</h3>
+          <p>Provided customer service, product expertise, and teamwork in a fast-paced environment.</p>
+        </div>
+        <div class="card">
+          <h3>Bullwinkle’s Family Fun Center (Interviewed)</h3>
+          <p>Gained early professional interviewing experience; learned workplace expectations.</p>
+        </div>
+        <!-- Add internships, summer jobs, or future roles here -->
+      </section>
+
+      <section class="experience-section" id="highlights">
+        <h2>🌟 Highlights</h2>
+        <ul>
+          <li>Competitive ski racer — state and regional competitions</li>
+          <li>Active mountain biker and outdoor enthusiast in the Pacific Northwest</li>
+          <li>Built a 3D-printed RC airplane modeled on the P-38 Lightning</li>
+          <li>Developing an AI-powered journaling web app</li>
+          <li>Created this personal website from scratch with Astro</li>
+        </ul>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    background: #0f1219;
+    color: #e6eef9;
+    margin: 0;
+  }
+
+  .experience-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .experience-section {
+    margin-bottom: 3rem;
+  }
+
+  .experience-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.03);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+  }
+
+  .card h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: #6ea8fe;
+  }
+</style>
