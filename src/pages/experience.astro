@@ -5,118 +5,140 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Experience" description="Education, highlights, and work experience" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience | Bridger Schaffer</title>
   </head>
   <body>
     <Header />
 
-    <main>
-      <section class="experience">
-        <h1>Experience</h1>
-        <p class="intro">
-          A quick overview of my background — click each section to expand for more detail.
-        </p>
+    <main class="timeline-container">
+      <!-- College Era -->
+      <section>
+        <h2>College Era</h2>
 
-        <!-- Education dropdown -->
-        <details class="exp-block">
-          <summary>🎓 Education</summary>
-          <div class="content">
-            <p>Embry-Riddle Aeronautical University — B.S. in Aeronautical Science (2025–2029)</p>
-            <p>Private Pilot License — Earned 2025</p>
-          </div>
+        <details>
+          <summary>Education</summary>
+          <p>
+            Embry-Riddle Aeronautical University — Major: Aeronautical Science
+            (with PPL training).
+          </p>
         </details>
 
-        <!-- Highlights dropdown -->
-        <details class="exp-block">
-          <summary>⭐ Highlights</summary>
-          <div class="content">
-            <ul>
-              <li>Sherwood Ski Team — competed in many state and regional competitions</li>
-              <li>Sherwood Band Program — was a member and section leader in our competitive Jazz Band, Marching Band, and Wind Ensemble</li>
-            </ul>
-          </div>
+        <details>
+          <summary>Clubs & Activities</summary>
+          <ul>
+            <li>Aviation clubs</li>
+            <li>Ski team</li>
+            <li>Outdoor recreation groups</li>
+          </ul>
         </details>
 
-        <!-- Work dropdown -->
-        <details class="exp-block">
-          <summary>💼 Work Experience</summary>
-          <div class="content">
-            <p>Bike Instructor — taught childeren how to bike without training wheels at a Pedalheads summer camp</p>
-          </div>
+        <details>
+          <summary>Scholarships & Awards</summary>
+          <p>(List scholarships, academic/athletic awards, etc.)</p>
+        </details>
+
+        <details>
+          <summary>Flight Training</summary>
+          <details>
+            <summary>Progress Log</summary>
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Hours</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Total Time</td><td>XX</td></tr>
+                <tr><td>Solo</td><td>XX</td></tr>
+                <tr><td>Cross-Country</td><td>XX</td></tr>
+                <tr><td>Night</td><td>XX</td></tr>
+                <tr><td>IFR</td><td>XX</td></tr>
+              </tbody>
+            </table>
+          </details>
+        </details>
+      </section>
+
+      <!-- High School Era -->
+      <section class="secondary">
+        <h2>High School Era</h2>
+
+        <details>
+          <summary>Activities</summary>
+          <ul>
+            <li>Ski team</li>
+            <li>Band (trombone)</li>
+            <li>Mountain biking</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Leadership</summary>
+          <p>Planned and organized “Band Prom.”</p>
+        </details>
+
+        <details>
+          <summary>Awards & Recognition</summary>
+          <ul>
+            <li>District/State music competitions</li>
+          </ul>
         </details>
       </section>
     </main>
 
     <Footer />
   </body>
+
+  <style>
+    main.timeline-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      font-family: system-ui, sans-serif;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    details {
+      background: rgba(255, 255, 255, 0.03);
+      color: #e6eef9;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+
+    th, td {
+      padding: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: left;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .secondary details {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
 </html>
-
-<style>
-  body {
-    background: #0f1219;
-    color: #e6eef9;
-    font-family: system-ui, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 3rem 1rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .intro {
-    text-align: center;
-    color: #aab4c4;
-    margin-bottom: 2rem;
-  }
-
-  .exp-block {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    padding: 1rem 1.25rem;
-  }
-
-  .exp-block summary {
-    font-size: 1.25rem;
-    font-weight: bold;
-    cursor: pointer;
-    list-style: none;
-    outline: none;
-  }
-
-  .exp-block summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .exp-block[open] {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.2);
-  }
-
-  .exp-block .content {
-    margin-top: 1rem;
-    line-height: 1.6;
-  }
-
-  .exp-block ul {
-    margin: 0;
-    padding-left: 1.5rem;
-  }
-
-  .exp-block li {
-    margin-bottom: 0.5rem;
-  }
-</style>
