@@ -5,88 +5,135 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experience | Bridger Schaffer</title>
+    <BaseHead title={`Experience | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
 
-    <main class="timeline-container">
-      <!-- College Era -->
-      <section>
-        <h2>College Era</h2>
+    <main class="experience-page">
+      <header class="page-header">
+        <h1>Experience</h1>
+        <p class="lead">
+          A clear timeline of my education, activities, and flight training. Expand any section for more detail.
+        </p>
+      </header>
 
-        <details>
+      <!-- College Era (primary) -->
+      <section class="era college">
+        <h2 class="era-title">College Era</h2>
+
+        <details class="exp-block">
           <summary>Education</summary>
-          <p>
-            Embry-Riddle Aeronautical University — Major: Aeronautical Science
-            (with PPL training).
-          </p>
+          <div class="exp-content">
+            <p><strong>Embry-Riddle Aeronautical University</strong> — B.S. in Aeronautical Science (expected 2029)</p>
+            <p>Course highlights: Flight Theory, Aviation Safety, Weather Systems. Continuing flight training while pursuing coursework.</p>
+          </div>
         </details>
 
-        <details>
-          <summary>Clubs & Activities</summary>
-          <ul>
-            <li>Aviation clubs</li>
-            <li>Ski team</li>
-            <li>Outdoor recreation groups</li>
-          </ul>
+        <details class="exp-block">
+          <summary>Clubs &amp; Activities</summary>
+          <div class="exp-content">
+            <ul>
+              <li>Aviation/flight club (in progress)</li>
+              <li>Outdoor & recreation groups — mountain biking meetups</li>
+              <li>Ski team involvement and local outings</li>
+            </ul>
+          </div>
         </details>
 
-        <details>
-          <summary>Scholarships & Awards</summary>
-          <p>(List scholarships, academic/athletic awards, etc.)</p>
+        <details class="exp-block">
+          <summary>Scholarships &amp; Awards</summary>
+          <div class="exp-content">
+            <p>Add any academic scholarships, aviation awards, or recognitions here (e.g., merit scholarships, competition placings).</p>
+            <ul>
+              <li>Example: [Add scholarship name — year]</li>
+            </ul>
+          </div>
         </details>
 
-        <details>
+        <!-- Flight Training (nested dropdown with a table) -->
+        <details class="exp-block">
           <summary>Flight Training</summary>
-          <details>
-            <summary>Progress Log</summary>
-            <table>
-              <thead>
-                <tr>
-                  <th>Category</th>
-                  <th>Hours</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Total Time</td><td>XX</td></tr>
-                <tr><td>Solo</td><td>XX</td></tr>
-                <tr><td>Cross-Country</td><td>XX</td></tr>
-                <tr><td>Night</td><td>XX</td></tr>
-                <tr><td>IFR</td><td>XX</td></tr>
-              </tbody>
-            </table>
-          </details>
+          <div class="exp-content">
+            <p>Progress, ratings, and logged hours. Expand the tables for details.</p>
+
+            <!-- nested dropdown: Hours by category -->
+            <details class="nested">
+              <summary>Hours — Summary</summary>
+              <div class="nested-content">
+                <table class="hours-table">
+                  <thead>
+                    <tr><th>Category</th><th>Hours</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Total Time</td><td>XX.X</td></tr>
+                    <tr><td>PIC (Pilot-in-Command)</td><td>XX.X</td></tr>
+                    <tr><td>Solo</td><td>XX.X</td></tr>
+                    <tr><td>Dual</td><td>XX.X</td></tr>
+                    <tr><td>Cross-Country</td><td>XX.X</td></tr>
+                    <tr><td>Night</td><td>XX.X</td></tr>
+                    <tr><td>Instrument</td><td>XX.X</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+
+            <!-- nested dropdown: Hours by aircraft (optional) -->
+            <details class="nested">
+              <summary>Hours — By aircraft</summary>
+              <div class="nested-content">
+                <ul>
+                  <li>Cessna 172: XX.X hrs</li>
+                  <li>Piper Archer: X.X hrs</li>
+                  <li>Other: X.X hrs</li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- nested dropdown: Notes / next steps -->
+            <details class="nested">
+              <summary>Notes &amp; Next Steps</summary>
+              <div class="nested-content">
+                <p>Current training goals, planned ratings, and target milestones (e.g., instrument training, commercial requirements).</p>
+              </div>
+            </details>
+          </div>
         </details>
       </section>
 
-      <!-- High School Era -->
-      <section class="secondary">
-        <h2>High School Era</h2>
+      <!-- High School Era (secondary) -->
+      <section class="era highschool">
+        <h2 class="era-title">High School Era</h2>
 
-        <details>
+        <details class="exp-block">
           <summary>Activities</summary>
-          <ul>
-            <li>Ski team</li>
-            <li>Band (trombone)</li>
-            <li>Mountain biking</li>
-          </ul>
+          <div class="exp-content">
+            <ul>
+              <li>Ski team — regional competitions</li>
+              <li>Band (trombone) — ensemble & solo performances</li>
+              <li>Mountain biking & outdoor adventures</li>
+            </ul>
+          </div>
         </details>
 
-        <details>
+        <details class="exp-block">
           <summary>Leadership</summary>
-          <p>Planned and organized “Band Prom.”</p>
+          <div class="exp-content">
+            <p>Planned and organized events (e.g., Band Prom, team meetups). Experience coordinating peers and schedules.</p>
+          </div>
         </details>
 
-        <details>
-          <summary>Awards & Recognition</summary>
-          <ul>
-            <li>District/State music competitions</li>
-          </ul>
+        <details class="exp-block">
+          <summary>Awards &amp; Recognition</summary>
+          <div class="exp-content">
+            <ul>
+              <li>District/State music competition placements</li>
+              <li>Team certificates / acknowledgements</li>
+            </ul>
+          </div>
         </details>
       </section>
     </main>
@@ -95,50 +142,160 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   </body>
 
   <style>
-    main.timeline-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      font-family: system-ui, sans-serif;
+    /* page-scoped styles — consistent with your dark theme */
+    :root {
+      --bg: #0f1219;
+      --panel: rgba(255,255,255,0.03);
+      --panel-hover: rgba(255,255,255,0.06);
+      --muted: #aab4c4;
+      --accent: #4da6ff;
     }
 
-    section {
-      margin-bottom: 2rem;
+    /* avoid accidental horizontal scroll on this page */
+    html, body {
+      overflow-x: hidden;
     }
 
-    details {
-      background: rgba(255, 255, 255, 0.03);
+    body {
+      background: var(--bg);
       color: #e6eef9;
-      border-radius: 8px;
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    .experience-page {
+      max-width: 1100px;
+      margin: 2.25rem auto;
+      padding: 1.25rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .page-header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2.1rem;
+    }
+    .page-header .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Era block (slight timeline hint with left accent) */
+    .era {
+      margin-top: 1.5rem;
+      padding-left: 0.75rem;
+      border-left: 3px solid rgba(77,166,255,0.06);
+    }
+    .era-title {
+      margin: 0 0 0.75rem;
+      font-size: 1.35rem;
+      color: #ffffff;
+    }
+
+    /* details blocks (panels) */
+    .exp-block {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      margin-bottom: 0.9rem;
       padding: 0.75rem 1rem;
-      margin-bottom: 0.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: background .12s ease, border-color .12s ease, box-shadow .12s ease;
+    }
+    .exp-block[open] {
+      background: var(--panel-hover);
+      border-color: rgba(255,255,255,0.14);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
     }
 
     summary {
-      font-weight: bold;
+      font-weight: 600;
       cursor: pointer;
+      list-style: none;
       outline: none;
+      display: block;
+      padding-right: 28px; /* space for custom arrow */
+      color: #eaf2ff;
     }
 
-    table {
+    /* hide default marker on WebKit */
+    summary::-webkit-details-marker { display: none; }
+
+    /* custom rotating arrow (right -> down when open) */
+    summary::after {
+      content: "▸";
+      position: absolute;
+      right: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      color: var(--muted);
+      transition: transform .18s ease, color .12s ease;
+      font-size: 0.95rem;
+    }
+    .exp-block[open] > summary::after {
+      transform: translateY(-50%) rotate(90deg);
+      color: var(--accent);
+    }
+
+    .exp-content {
+      margin-top: 0.65rem;
+      color: #d6e6ff;
+      line-height: 1.55;
+    }
+
+    .exp-content ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    /* nested details styling (slightly indented) */
+    details.nested {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding: 0.6rem;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+    }
+    details.nested summary { font-weight: 600; color: #e6eef9; padding-right: 24px; }
+    details.nested summary::after { right: 0.6rem; }
+
+    .nested-content { margin-top: 0.5rem; color: #c9d7ea; }
+
+    /* table: flight hours */
+    .hours-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #dfeafe;
     }
-
-    th, td {
-      padding: 0.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+    .hours-table th,
+    .hours-table td {
+      padding: 0.5rem 0.6rem;
+      border: 1px solid rgba(255,255,255,0.08);
       text-align: left;
     }
-
-    th {
-      background: rgba(255, 255, 255, 0.05);
+    .hours-table th {
+      background: rgba(255,255,255,0.03);
+      font-weight: 600;
+      color: #eaf2ff;
     }
 
-    .secondary details {
-      background: rgba(255, 255, 255, 0.02);
+    /* subtle difference for high school era */
+    .highschool .exp-block {
+      background: rgba(255,255,255,0.02);
+      border-color: rgba(255,255,255,0.06);
+    }
+
+    /* responsive: stack nicely on small screens */
+    @media (max-width: 720px) {
+      .experience-page { padding: 1rem; margin: 1rem auto; }
+      summary::after { right: 0.6rem; }
+      .page-header h1 { font-size: 1.6rem; }
     }
   </style>
 </html>
