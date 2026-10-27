@@ -2,7 +2,7 @@
 
 ## Cairn journal worker
 
-Cairn is included as a separate static-asset Worker so the personal site remains independent. Its source is in `public/cairn/`, and its Cloudflare configuration is `wrangler.cairn.json`.
+Cairn is included as a separate static-asset Worker so the personal site remains independent. Its source is in `public/cairn/`, and its Cloudflare configuration is `wrangler.cairn.json`. It supports installable, offline-first sessions; the goal checklist controls optional prompt, free-write, tomorrow, and memorable-day modules, while sliders and the Cairn stay on for every check-in.
 
 Before deploying Cairn:
 

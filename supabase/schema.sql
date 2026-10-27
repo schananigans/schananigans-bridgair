@@ -6,12 +6,20 @@ create table if not exists public.entries (
   entry_date date not null,
   prompt_text text,
   entry_text text not null default '',
+  free_write text not null default '',
+  tomorrow text,
+  memorable text check (memorable in ('no', 'maybe', 'yes')),
   mood jsonb,
   agency smallint check (agency between 1 and 5),
   cairn jsonb,
   saved_at timestamptz not null default now(),
   primary key (user_id, entry_date)
 );
+
+-- Also upgrades projects that already created entries from an earlier schema.
+alter table public.entries add column if not exists free_write text not null default '';
+alter table public.entries add column if not exists tomorrow text;
+alter table public.entries add column if not exists memorable text check (memorable in ('no', 'maybe', 'yes'));
 
 alter table public.entries enable row level security;
 revoke all on table public.entries from anon, authenticated;

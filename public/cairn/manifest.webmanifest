@@ -1,0 +1,18 @@
+{
+  "name": "Cairn Journal",
+  "short_name": "Cairn",
+  "description": "A quiet place to return to your words.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1a2318",
+  "theme_color": "#1a2318",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
