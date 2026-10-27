@@ -28,9 +28,11 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "build:cairn": "astro build",
     "cf-typegen": "wrangler types",
     "check": "astro build && tsc && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
+    "deploy:cairn": "npm run build:cairn && wrangler deploy --config wrangler.cairn.json",
     "dev": "astro dev",
     "preview": "astro build && wrangler dev"
   },

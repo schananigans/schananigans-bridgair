@@ -1,5 +1,20 @@
 # Astro Starter Kit: Blog
 
+## Cairn journal worker
+
+Cairn is included as a separate static-asset Worker so the personal site remains independent. Its source is in `public/cairn/`, and its Cloudflare configuration is `wrangler.cairn.json`. It supports installable, offline-first sessions; the goal checklist controls optional prompt, free-write, tomorrow, and memorable-day modules, while sliders and the Cairn stay on for every check-in.
+
+Before deploying Cairn:
+
+1. Run `supabase/schema.sql` in the Supabase SQL Editor.
+2. Confirm the Supabase project URL and browser publishable key in `public/cairn/cairn-config.js`.
+3. Add the deployed Cairn URL to Supabase Auth's Site URL and allowed redirect URLs. Supabase only permits magic-link redirects to configured URLs.
+4. Deploy the separate worker with `npm run deploy:cairn`. Cloudflare Wrangler publishes the static assets from `dist/cairn` as the `cairn-journal` Worker and attaches `cairn.bridgair.com` as its custom domain. The personal-site Worker stays independent.
+
+The user-facing auth flow needs custom SMTP before it can send magic links to people outside the Supabase project team. Never put a Supabase service-role or secret key in `public/cairn/`.
+
+Cloud sync is account-based, not end-to-end encrypted. The database applies owner-only RLS policies, but the Supabase project owner can technically access stored content.
+
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
 
 ![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
